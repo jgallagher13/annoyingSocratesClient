@@ -1,4 +1,4 @@
-import { createPost, getAllPosts } from '../../../../utilities/posts-api'
+import { createPost, getAllPosts, deletePost } from '../../../../utilities/posts-api'
 import sendRequest from '../../../../utilities/send-request'
 import { useState, useEffect } from 'react'
 import { useParams } from 'react-router-dom'
@@ -34,21 +34,25 @@ export default function PostsPage({ user }) {
    async function handleSubmit(event) {
         event.preventDefault()
         const post = { text: postData, user: user._id, quoteId: _id}
-        
-        // setPostData('');
-        console.log(post)
         await createPost(post)
+    }
+
+    async function handleDelete(event) {
+        const deletedPost = await deletePost(event.target.id)
+        const updatedPostList = posts.filter(post => post._id !== deletedPost._id)
+        setPosts(updatedPostList)
     }
 
     return (
         <>
-        <h2>Posts</h2>
-        
+        <h2>Quote Discussion Thread</h2>
+        <h3>{quote.content}</h3>
         <ul>
   {posts.map(post => (
     <div key={post._id}>
         <p>{user.name}</p>
       <p>{post.text}</p>
+      <button onClick={handleDelete} id={post._id}>Delete Post</button>
     </div>
   ))}
 </ul>

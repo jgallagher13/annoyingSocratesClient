@@ -8,3 +8,7 @@ export async function createPost(postData) {
 export async function getAllPosts(quoteId) {
     return sendRequest(`${BASE_URL}/${quoteId}`)
 }
+
+export async function deletePost(postId) {
+    return sendRequest(`${BASE_URL}/${postId}`, 'DELETE')
+}

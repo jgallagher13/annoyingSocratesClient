@@ -10,7 +10,6 @@ export default function IndexPage() {
         async function getQuotes() {
             const quotes = await sendRequest('https://api.quotable.io/quotes?page=2')
             setQuotes(quotes.results)
-            console.log(quotes.results)
         }
         getQuotes()
     }, [])
