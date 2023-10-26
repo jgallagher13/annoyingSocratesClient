@@ -43,9 +43,16 @@ export default function PostsPage({ user }) {
     return (
         <>
         <h2>Posts</h2>
+        
         <ul>
-            
-        </ul>
+  {posts.map(post => (
+    <div key={post._id}>
+        <p>{user.name}</p>
+      <p>{post.text}</p>
+    </div>
+  ))}
+</ul>
+
         <PostForm handleChange={handleChange} handleSubmit={handleSubmit}/> 
         </>
     )
