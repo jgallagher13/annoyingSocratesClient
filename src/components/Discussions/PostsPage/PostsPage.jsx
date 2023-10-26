@@ -1,4 +1,4 @@
-import { createPost } from '../../../../utilities/posts-api'
+import { createPost, getAllPosts } from '../../../../utilities/posts-api'
 import sendRequest from '../../../../utilities/send-request'
 import { useState, useEffect } from 'react'
 import { useParams } from 'react-router-dom'
@@ -8,7 +8,8 @@ export default function PostsPage({ user }) {
     const { _id } = useParams()
     const [quote, setQuote] = useState({})
     const [postData, setPostData] = useState()
-    const [entries, setEntries] = useState([]);
+    
+    const [posts, setPosts] = useState([])
 
     useEffect(() => {
         async function getQuote() {
@@ -16,7 +17,14 @@ export default function PostsPage({ user }) {
             setQuote(quote)
         }
         getQuote()
+
+        async function getPosts() {
+            const posts = await getAllPosts(_id)
+            setPosts(posts)
+        }
+        getPosts()
     }, [])
+
 
     function handleChange(event) {
         setPostData(event.target.value)
@@ -25,9 +33,9 @@ export default function PostsPage({ user }) {
 
    async function handleSubmit(event) {
         event.preventDefault()
-        const post = { text: postData, user: user._id }
-        setEntries([...entries, post]);
-        setPostData('');
+        const post = { text: postData, user: user._id, quoteId: _id}
+        
+        // setPostData('');
         console.log(post)
         await createPost(post)
     }
@@ -36,9 +44,7 @@ export default function PostsPage({ user }) {
         <>
         <h2>Posts</h2>
         <ul>
-            {entries.map((entry, index) => (
-                <li key={index}><span>{user.name}</span>{entry.text}</li>
-            ))}
+            
         </ul>
         <PostForm handleChange={handleChange} handleSubmit={handleSubmit}/> 
         </>
