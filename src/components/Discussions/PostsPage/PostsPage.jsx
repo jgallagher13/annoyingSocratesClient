@@ -1,12 +1,20 @@
-import { createPost } from '../../../../utilities/posts-api'
+import { createPost, sendRequest } from '../../../../utilities/posts-api'
 import { useState } from 'react'
 import { useParams } from 'react-router-dom'
 import PostForm from '../PostForm/PostForm'
-export default function PostsPage({ quotes, user }) {
+export default function PostsPage({ user }) {
     
-    const { quote } = useParams()
-    // let quoteState = quotes.find(quo => quo.quote === quote)
+    const { _id } = useParams()
+    const [quote, setQuote] = useState({})
     const [postData, setPostData] = useState()
+
+    useEffect(() => {
+        async function getQuote() {
+            const quote = await sendRequest(`https://api.quotable.io//${_id}`)
+            setQuote(quote)
+        }
+        getQuote()
+    }, [])
 
     function handleChange(event) {
         setPostData(event.target.value)
@@ -15,17 +23,14 @@ export default function PostsPage({ quotes, user }) {
 
    async function handleSubmit(event) {
         event.preventDefault()
-        const banana = { text: postData, user: user._id }
-        console.log(banana)
-        await createPost(banana)
+        const post = { text: postData, user: user._id }
+        console.log(post)
+        await createPost(post)
     }
 
     return (
         <>
         <h2>Posts</h2>
-        {/* <h3>{quoteState}</h3> */}
-        <h3>{quote}</h3>
-        {/* <p>{postData.text}</p> */}
         <PostForm handleChange={handleChange} handleSubmit={handleSubmit}/> 
         </>
     )

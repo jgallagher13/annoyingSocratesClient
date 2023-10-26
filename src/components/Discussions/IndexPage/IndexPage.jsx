@@ -8,20 +8,19 @@ export default function IndexPage() {
 
     useEffect(() => {
         async function getQuotes() {
-            const quotes = await sendRequest('https://philosophy-quotes-api.glitch.me/quotes')
-            setQuotes(quotes)
-            
+            const quotes = await sendRequest('https://api.quotable.io/quotes?page=2')
+            setQuotes(quotes.results)
+            console.log(quotes.results)
         }
         getQuotes()
     }, [])
     return (
         <>
         {quotes.map(quote => (
-            <div key={quote.quote}>
-                <Link to={`/${quote.quote}`} quotes={quotes}>{quote.quote}</Link>
+            <div key={quote._id}>
+                <Link to={`/${quote._id}`}>{quote.content}</Link>
             </div>
         ))}
         </>
-
     ) 
 }

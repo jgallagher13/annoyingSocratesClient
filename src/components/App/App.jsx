@@ -17,7 +17,7 @@ function App() {
           <NavBar user={user} setUser={setUser} />
           <Routes>
             <Route path='/' element={<IndexPage />} />
-            <Route path='/:quote' element={<PostsPage user={user}/>} />
+            <Route path='/:_id' element={<PostsPage user={user}/>} />
           </Routes>
         </> :
         <AuthPage setUser={setUser} />
