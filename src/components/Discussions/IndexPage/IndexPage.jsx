@@ -18,7 +18,7 @@ export default function IndexPage() {
         <>
         {quotes.map(quote => (
             <div key={quote._id}>
-                <Link to={`/${quote._id}`}>{quote.content}</Link>
+                <Link to={`/quotes/${quote._id}`}>{quote.content}</Link>
             </div>
         ))}
         </>
