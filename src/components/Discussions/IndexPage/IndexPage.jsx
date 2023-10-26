@@ -8,7 +8,7 @@ export default function IndexPage() {
 
     useEffect(() => {
         async function getQuotes() {
-            const quotes = await sendRequest('https://api.quotable.io/quotes?page=2')
+            const quotes = await sendRequest('https://api.quotable.io/quotes?limit=150')
             setQuotes(quotes.results)
         }
         getQuotes()

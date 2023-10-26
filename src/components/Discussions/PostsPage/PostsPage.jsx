@@ -34,7 +34,10 @@ export default function PostsPage({ user }) {
    async function handleSubmit(event) {
         event.preventDefault()
         const post = { text: postData, user: user._id, quoteId: _id}
-        await createPost(post)
+       const createdPost = await createPost(post)
+       setPostData('')
+       setPosts([...posts, createdPost])
+       
     }
 
     async function handleDelete(event) {
@@ -47,6 +50,7 @@ export default function PostsPage({ user }) {
         <>
         <h2>Quote Discussion Thread</h2>
         <h3>{quote.content}</h3>
+        <h3>{quote.author}</h3>
         <ul>
   {posts.map(post => (
     <div key={post._id}>
