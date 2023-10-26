@@ -4,6 +4,8 @@ import { getUser } from '../../../utilities/user-services'
 import AuthPage from '../Auth/AuthPage/AuthPage'
 import NavBar from '../NavBar/NavBar'
 import MainPage from '../MainPage/MainPage'
+import IndexPage from '../Discussions/IndexPage/IndexPage'
+import PostsPage from '../Discussions/PostsPage/PostsPage'
 
 function App() {
   const [user, setUser] = useState(getUser())
@@ -14,7 +16,8 @@ function App() {
         <>
           <NavBar user={user} setUser={setUser} />
           <Routes>
-            <Route path='/' element={<MainPage />} />
+            <Route path='/' element={<IndexPage />} />
+            <Route path='/:quote' element={<PostsPage user={user}/>} />
           </Routes>
         </> :
         <AuthPage setUser={setUser} />
