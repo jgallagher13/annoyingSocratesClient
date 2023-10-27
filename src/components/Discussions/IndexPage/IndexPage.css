@@ -1,0 +1,33 @@
+.quoteLinks-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 15px;
+  }
+  
+.quoteLink {
+    border: 3px solid white;
+    border-radius: 10px;
+    padding: 10px;
+    text-align: center;
+    background-color: rgb(241, 216, 138);
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 12px;
+  }
+  
+.quoteLink a {
+    text-decoration: none;
+    color: rgb(71, 162, 71);
+  }
+  
+ .quoteLink a:hover {
+    color: #0077b6;
+  }
+
+h1 {
+    text-align: center;
+    color: white;
+}

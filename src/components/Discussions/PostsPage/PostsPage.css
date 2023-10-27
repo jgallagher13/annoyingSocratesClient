@@ -1,0 +1,24 @@
+.postPage {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.postPage h2, h3 {
+color: white;
+}
+
+.post {
+    border: 3px solid white;
+    border-radius: 10px;
+    padding: 10px;
+    text-align: center;
+    background-color: rgb(241, 216, 138);
+}
+
+.postForm {
+    border: 2px solid white;
+    border-radius: 10px;
+    padding: 5px;
+}

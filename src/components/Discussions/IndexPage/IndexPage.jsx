@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react'
 import sendRequest from '../../../../utilities/send-request'
 import { Link } from 'react-router-dom'
+import './IndexPage.css'
 
 export default function IndexPage() {
 
@@ -15,11 +16,14 @@ export default function IndexPage() {
     }, [])
     return (
         <>
+        <h1>Choose a quote to discuss!</h1>
+        <div className='quoteLinks-container'>
         {quotes.map(quote => (
-            <div key={quote._id}>
+            <div key={quote._id} className='quoteLink'>
                 <Link to={`/quotes/${quote._id}`}>{quote.content}</Link>
             </div>
         ))}
+        </div>
         </>
     ) 
 }

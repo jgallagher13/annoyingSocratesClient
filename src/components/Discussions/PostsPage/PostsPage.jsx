@@ -3,6 +3,8 @@ import sendRequest from '../../../../utilities/send-request'
 import { useState, useEffect } from 'react'
 import { useParams } from 'react-router-dom'
 import PostForm from '../PostForm/PostForm'
+import './PostsPage.css'
+
 export default function PostsPage({ user }) {
     
     const { _id } = useParams()
@@ -47,13 +49,14 @@ export default function PostsPage({ user }) {
     }
     return (
         <>
+        <div className='postPage'>
         <h2>Quote Discussion Thread</h2>
         <h3>{quote.content}</h3>
         <h3>{quote.author}</h3>
         <ul>
   {posts.map(post => (
 
-    <div key={post._id}>
+    <div key={post._id} className='post'>
         <p>{post.user}</p>
         
       <p>{post.text}</p>
@@ -63,8 +66,11 @@ export default function PostsPage({ user }) {
     </div>
   ))}
 </ul>
-
+<div className='postForm'>
+    <h3>Add to the conversation!</h3>
         <PostForm handleChange={handleChange} handleSubmit={handleSubmit}/> 
+    </div>
+</div>
         </>
     )
 }
