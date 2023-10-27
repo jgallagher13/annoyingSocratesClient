@@ -45,7 +45,6 @@ export default function PostsPage({ user }) {
         const updatedPostList = posts.filter(post => post._id !== deletedPost._id)
         setPosts(updatedPostList)
     }
-
     return (
         <>
         <h2>Quote Discussion Thread</h2>
@@ -53,10 +52,14 @@ export default function PostsPage({ user }) {
         <h3>{quote.author}</h3>
         <ul>
   {posts.map(post => (
+
     <div key={post._id}>
-        <p>{user.name}</p>
+        <p>{post.user}</p>
+        
       <p>{post.text}</p>
-      <button onClick={handleDelete} id={post._id}>Delete Post</button>
+      {user && user._id === post.user && (
+<button onClick={handleDelete} id={post._id}>Delete Post</button>
+)}  
     </div>
   ))}
 </ul>
