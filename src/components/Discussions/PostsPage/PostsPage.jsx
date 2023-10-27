@@ -52,13 +52,14 @@ export default function PostsPage({ user }) {
         <div className='postPage'>
         <h2>Quote Discussion Thread</h2>
         <h3>{quote.content}</h3>
-        <h3>{quote.author}</h3>
+        <h3>- {quote.author}</h3>
+        <div className="line-divider"></div>
         <ul>
   {posts.map(post => (
 
     <div key={post._id} className='post'>
         <p>{post.user}</p>
-        
+        <div className="line-divider-post"></div>
       <p>{post.text}</p>
       {user && user._id === post.user && (
 <button onClick={handleDelete} id={post._id}>Delete Post</button>
@@ -67,8 +68,9 @@ export default function PostsPage({ user }) {
   ))}
 </ul>
 <div className='postForm'>
-    <h3>Add to the conversation!</h3>
+    <div className='postFormInput'> 
         <PostForm handleChange={handleChange} handleSubmit={handleSubmit}/> 
+    </div>
     </div>
 </div>
         </>

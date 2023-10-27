@@ -1,0 +1,37 @@
+.post-form {
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+    background-color: rgb(71, 162, 71);
+    border-radius: 5px;
+  }
+  
+textarea {
+    height: 100px;
+    padding: 10px;
+    border: 2px solid #1274dc;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    font-size: 16px;
+  }
+  
+input[type="submit"] {
+    background-color: #1274dc;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+  }
+  
+input[type="submit"]:hover {
+    background-color: #0056b3;
+  }
+  
+.line-divider {
+    width: 80%;
+    height: 2px; 
+    background-color: white;
+    margin: 10px 0;
+  }
