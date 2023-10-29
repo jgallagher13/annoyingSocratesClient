@@ -58,10 +58,10 @@ export default function PostsPage({ user }) {
   {posts.map(post => (
 
     <div key={post._id} className='post'>
-        <p>{post.user}</p>
+        <p>{post.user.name}</p>
         <div className="line-divider-post"></div>
       <p>{post.text}</p>
-      {user && user._id === post.user && (
+      {user && user._id === post.user._id && (
 <button onClick={handleDelete} id={post._id}>Delete Post</button>
 )}  
     </div>
