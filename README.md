@@ -30,7 +30,7 @@
 - Lucidchart
 
 ## Getting Started
-- [Link to Application]()
+- [Link to Application](https://annoyingsocratesclient.onrender.com/)
 - [Project Planning](https://trello.com/b/VG7Mz2RQ/annoying-socrates)
 
 ## Next Steps
