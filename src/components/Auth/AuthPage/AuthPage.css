@@ -1,7 +1,7 @@
 .auth {
-    background-image: url('../../../../images/greekcolumns.avif');
-    background-size: cover;
-    position: fixed;
+  background-image: url('../../../../images/greekcolumns.avif');
+  background-size: cover;
+  position: fixed;
   top: 0;
   left: 0;
   width: 100%;
@@ -21,8 +21,51 @@ button {
   border: none;
   border-radius: 5px;
   cursor: pointer;
+  justify-content: center;
 }
 
 button:hover {
   background-color: #0056b3;
+}
+
+.form-container {
+  background-color: rgba(249, 249, 249, 0.8);
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  padding: 20px;
+  max-width: 300px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center; 
+  text-align: center;
+}
+
+.form-container input[type="text"],
+input[type="email"],
+input[type="password"] {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  margin-bottom: 10px;
+}
+
+.from-container button[type="submit"] {
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.error-message {
+  color: red;
+  margin-top: 10px;
+}
+
+.submit-btn {
+  text-align: center;
 }

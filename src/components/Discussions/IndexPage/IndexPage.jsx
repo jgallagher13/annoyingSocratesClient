@@ -16,7 +16,7 @@ export default function IndexPage() {
     }, [])
     return (
         <>
-        <h1>Choose a quote to discuss!</h1>
+        <h1>Choose a Quote to Discuss!</h1>
         <div className='quoteLinks-container'>
         {quotes.map(quote => (
             <div key={quote._id} className='quoteLink'>

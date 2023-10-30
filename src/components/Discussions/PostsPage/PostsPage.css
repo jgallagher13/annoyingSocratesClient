@@ -9,6 +9,12 @@
 color: white;
 }
 
+.directions {
+    color: white;
+    margin: 10px;
+    margin-top: 0;
+}
+
 .post {
     border: 3px solid white;
     border-radius: 10px;
@@ -16,6 +22,7 @@ color: white;
     text-align: center;
     background-color: goldenrod;
     margin: 6px;
+    color: #9e5719;
 }
 
 .postForm {
@@ -33,7 +40,7 @@ color: white;
     width: 100%;
     height: 1px; 
     background-color: white;
-    margin: 5px 0;
+    margin: 5px;
 }
 
 .header-posts {
@@ -46,4 +53,20 @@ color: white;
 
 .pillar {
     border: none;
+}
+
+.bold {
+    font-weight: bold;
+}
+
+.quote-content {
+    margin-bottom: 0;
+}
+
+.quote-author {
+    margin-bottom: 0;
+}
+
+.recc {
+    margin-bottom: 0;
 }
