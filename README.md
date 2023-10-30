@@ -6,14 +6,14 @@
 
 ## Images of Application
 - Sign In Page
-![Alt text]('/images/soclogin.png')
+![Alt text]('images/soclogin.png')
 - About Page
-![Alt text]('/images/socabout.png')
+![Alt text]('images/socabout.png')
 - Index Page
-![Alt text]('/images/socindex.png')
+![Alt text]('images/socindex.png')
 - Posts Page
-![Alt text]('/images/socpost1.png')
-![Alt text]('/images/socpost2.png')
+![Alt text]('images/socpost1.png')
+![Alt text]('images/socpost2.png')
 
 ## Technologies Used
 - Mongoose
