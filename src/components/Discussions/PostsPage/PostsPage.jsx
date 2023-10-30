@@ -47,12 +47,16 @@ export default function PostsPage({ user }) {
         const updatedPostList = posts.filter(post => post._id !== deletedPost._id)
         setPosts(updatedPostList)
     }
+
+ 
     return (
         <>
         <div className='postPage'>
+        <img src='../../../../images/greekpillar.png' />
         <h2>Quote Discussion Thread</h2>
         <h3>{quote.content}</h3>
         <h3>- {quote.author}</h3>
+        
         <div className="line-divider"></div>
         <ul>
   {posts.map(post => (
@@ -61,7 +65,7 @@ export default function PostsPage({ user }) {
         <p>{post.user.name}</p>
         <div className="line-divider-post"></div>
       <p>{post.text}</p>
-      {user && user._id === post.user._id && (
+      {user && user._id === post.user._id && ( 
 <button onClick={handleDelete} id={post._id}>Delete Post</button>
 )}  
     </div>

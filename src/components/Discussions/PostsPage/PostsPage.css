@@ -14,7 +14,8 @@ color: white;
     border-radius: 10px;
     padding: 10px;
     text-align: center;
-    background-color: rgb(241, 216, 138);
+    background-color: goldenrod;
+    margin: 6px;
 }
 
 .postForm {
