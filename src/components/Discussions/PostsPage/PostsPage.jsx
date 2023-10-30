@@ -52,8 +52,11 @@ export default function PostsPage({ user }) {
     return (
         <>
         <div className='postPage'>
-        <img src='../../../../images/greekpillar.png' />
+            <div className='header-posts'>
+        <img className='pillar' src='../../../../images/greekpillar.png' />
         <h2>Quote Discussion Thread</h2>
+        <img className='pillar' src='../../../../images/greekpillar.png' />
+        </div>
         <h3>{quote.content}</h3>
         <h3>- {quote.author}</h3>
         

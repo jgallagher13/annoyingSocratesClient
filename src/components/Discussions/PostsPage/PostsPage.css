@@ -35,3 +35,15 @@ color: white;
     background-color: white;
     margin: 5px 0;
 }
+
+.header-posts {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 15px;
+    border-radius: 10px;
+}
+
+.pillar {
+    border: none;
+}
